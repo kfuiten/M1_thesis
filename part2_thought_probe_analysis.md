@@ -43,7 +43,7 @@ data$trial_correct <- ifelse(data$trial_score == 1.0, TRUE, FALSE)
 ggplot(data=data, aes(x=probe1, fill=trial_correct)) + geom_bar() + xlab("Participants' Ontask Rating")
 ```
 
-![](part2_thought_probe_analysis_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 It seems that, a small fraction of the time, participants make mistakes
 even when they are fully focused. Conversely, sometimes participants
 complete the trial correctly even when they admit to being somewhat
@@ -59,14 +59,14 @@ data$probe1 <- as.character(data$probe1)
 ggplot(data, aes(y=trial_score, x=probe1)) + geom_boxplot() + geom_violin() + xlab("Participants' Ontask Rating") + ylab("Trial Percentage Correct")
 ```
 
-![](part2_thought_probe_analysis_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ``` r
 data$probe1 <- as.integer(data$probe1)
 ggplot(data, aes(y=trial_score, x=probe1, color = as.character(time_condition))) + geom_point() + geom_jitter() + xlab("Participants' Ontask Rating") + ylab("Trial Percentage Correct") + labs(color = "Time Condition (in seconds)")
 ```
 
-![](part2_thought_probe_analysis_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ``` r
 linreg <- lm(probe1~trial_correct, data=data)
@@ -98,7 +98,7 @@ ggplot(data, aes(y=trial_score, x=probe1)) + geom_point() + geom_jitter() + xlab
 
     ## `geom_smooth()` using formula = 'y ~ x'
 
-![](part2_thought_probe_analysis_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 There’s clearly not a strong linear relationship (note the very small R
 squared value)… perhaps a psychometric curve would fit the data better?
@@ -112,7 +112,7 @@ second) time condition?
 ggplot(data=data, aes(x=probe1, fill=as.character(time_condition))) + geom_bar(position="dodge") + xlab("Participants' Ontask Rating") + labs(fill = "Time Condition (in seconds)")
 ```
 
-![](part2_thought_probe_analysis_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 There doesn’t seem to be much difference in ratings by time condition.
 
 The “4” on-task rating is especially intersting to me because there’s so
