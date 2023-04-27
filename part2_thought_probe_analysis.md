@@ -32,7 +32,7 @@ data$probe1 <- as.integer(data$probe1)
 ggplot(data=data, aes(x=probe1)) + geom_bar() + xlab("Participants' Ontask Rating")
 ```
 
-![](../figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 Overall, participants tend to report high levels of on-task-ed-ness
 (which makes sense, participants usually try to do their best on the
 task). So now, let’s see how often they remember the correct sequence of
