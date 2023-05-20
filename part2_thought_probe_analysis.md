@@ -79,18 +79,18 @@ summary(linreg)
     ## 
     ## Residuals:
     ##     Min      1Q  Median      3Q     Max 
-    ## -3.3036 -0.3036  0.6964  0.6964  1.7313 
+    ## -4.2130 -0.2130 -0.1469  0.7870  1.8531 
     ## 
     ## Coefficients:
     ##                   Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)        4.26866    0.08193   52.10   <2e-16 ***
-    ## trial_correctTRUE  1.03496    0.09424   10.98   <2e-16 ***
+    ## (Intercept)        4.14694    0.07099   58.41   <2e-16 ***
+    ## trial_correctTRUE  1.06607    0.08133   13.11   <2e-16 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.9485 on 547 degrees of freedom
-    ## Multiple R-squared:  0.1807, Adjusted R-squared:  0.1792 
-    ## F-statistic: 120.6 on 1 and 547 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 1.111 on 1027 degrees of freedom
+    ## Multiple R-squared:  0.1433, Adjusted R-squared:  0.1425 
+    ## F-statistic: 171.8 on 1 and 1027 DF,  p-value: < 2.2e-16
 
 ``` r
 ggplot(data, aes(y=trial_score, x=probe1)) + geom_point() + geom_jitter() + xlab("Participants' Ontask Rating") + ylab("Trial Percentage Correct") +  stat_smooth(method="lm")
@@ -126,13 +126,13 @@ correct_four <- data$probe1 == 4 & data$trial_score == 1
 length(data$time_condition[correct_four == TRUE & data$time_condition == 20]) #number of correct trials for 20-second durations in which participants selected "4" on the thought probe scale
 ```
 
-    ## [1] 29
+    ## [1] 53
 
 ``` r
 length(data$time_condition[correct_four == TRUE & data$time_condition == 30]) #number of correct trials for 30-second durations in which participants selected "4" on the thought probe scale
 ```
 
-    ## [1] 34
+    ## [1] 53
 
 Participants select “4” and complete the task correctly slightly more
 often in the 30-second duration trial.
@@ -142,13 +142,13 @@ incorrect_four <- data$probe1 == 4 & data$trial_score != 1
 length(data$time_condition[incorrect_four == TRUE & data$time_condition == 20]) #number of incorrect trials for 20-second durations in which participants selected "4" on the thought probe scale
 ```
 
-    ## [1] 19
+    ## [1] 30
 
 ``` r
 length(data$time_condition[incorrect_four == TRUE & data$time_condition == 30]) #number of incorrect trials for 30-second durations in which participants selected "4" on the thought probe scale
 ```
 
-    ## [1] 17
+    ## [1] 30
 
 Time condition doesn’t seem to make much of a difference.
 
