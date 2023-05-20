@@ -1,7 +1,7 @@
 # first-23-participants- 
-Raw data in task_performance_csv, thought_probe_csv, and ASRS folders
+Raw data in task_performance_csv, thought_probe, and ASRS folders
 
-first_participants_performance.csv, first_participants_probes.csv, and ASRS_data.csv are cleaned data frames with data from all participants
+first_participants_performance.csv, first_participants_probes.csv, and ASRS.csv are cleaned data frames with data from all participants
 
 all_data.csv combines all participant data into one data frame 
 
